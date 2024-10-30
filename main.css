@@ -1,0 +1,351 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #000000 !important;
+    
+}
+
+.typing {
+    display: inline;
+    border-right: 2px solid #34c759;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7)  !important;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    font-family:'Helvetica' sans-serif ;
+    background-image: url(imgs/giphy.webp);
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 1;
+    margin: 0;
+    height: 60px;
+    
+}
+
+.navbar-brand {
+    color: #34c759 !important; 
+
+}
+
+.nav-link {
+    color: white; 
+}
+
+.nav-link:hover {
+    color: #34c759; 
+}
+
+.navbar-nav {
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    padding-left: 20px;
+}
+
+.navbar-nav .nav-item {
+    display: inline-block; 
+}
+
+.navbar-toggler {
+    border: none !important;
+    padding-top: 25px; 
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.hero{
+    background-image: url('imgs/giphy.webp') !important;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 78vh; 
+    width: 100vw; 
+    padding: 0;
+    position: relative;
+    margin-top: 0; 
+}
+@keyframes fadeInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px); /* Start from the left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* End at the original position */
+    }
+}
+
+@keyframes fadeOutToLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0); /* Start at the original position */
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100px); /* Move to the left */
+    }
+}
+
+.outline-box {
+    border: 2px solid #34c759; /* Green border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    margin-bottom: 20px; /* Space between boxes */
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100px); /* Start position for animation */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack items vertically by default */
+}
+
+.timeline-item {
+    padding: 10px 0; /* Adjust padding */
+    position: relative;
+    width: 100%; /* Ensure items take full width */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out items */
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack items vertically by default */
+}
+
+.timeline-item {
+    padding: 10px 0; /* Adjust padding */
+    position: relative;
+    width: 100%; /* Ensure items take full width */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; 
+    
+
+}
+.timeline-item:hover{
+    background-color: #34c759;
+    color: #34c759;
+}
+.timeline-item-content {
+    padding: 5% 10%;
+    background-color: #1a1a1a;
+    position: relative;
+    border-radius: 6px;
+    flex: 1; /* Allow content to grow */
+    margin: 0 10px; /* Add margin for spacing */
+}
+
+.circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #34c759;
+    border: 4px solid #000000;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even) .circle {
+    left: -16px;
+}
+
+.timeline-item:nth-child(odd) .circle {
+    right: -16px; /* Adjust position for odd items */
+}
+
+/* Media Queries for Mobile View */
+@media only screen and (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .timeline-item-content {
+        margin: 10px 0; /* Space between items */
+        width: 90%; /* Limit width on mobile */
+    }
+
+    .circle {
+        left: unset; /* Reset position */
+        right: unset; /* Reset position */
+        margin: 10px 0; /* Add margin for spacing */
+    }
+}
+
+/* Media Queries for Desktop View */
+@media only screen and (min-width: 769px) {
+    .timeline-item {
+        flex-direction: row; /* Use row direction for desktop */
+        align-items: flex-start; /* Align items to the top */
+    }
+
+    .timeline-item-content {
+        margin: 0 10px; /* Add margin for spacing */
+        width: auto; /* Allow full width on desktop */
+    }
+
+    .circle {
+        margin: 0; /* Reset margin */
+    }
+}
+.progress {
+    height: 30px; /* Height of the progress bar */
+    background-color:  #1a1a1a; /* Background color of the progress bar container */
+    border-radius: 15px; /* Rounded corners for the oval effect */
+    overflow: hidden; /* Ensures the inner bar doesn't overflow the container */
+}
+
+.progress-bar {
+    background-color: #34c759; /* Change to your desired color */
+    font-weight: bold;
+    color:  #1a1a1a;
+    border-radius: 15px; /* Rounded corners for the progress bar itself */
+    transition: width 0.5s ease; /* Smooth transition for width change */
+}
+.outline-box {
+    border: 2px solid #34c759; /* Green border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    background-color: #1a1a1a; /* Dark background for the box */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.outline-box:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.blog-title {
+    color: #34c759; /* Green color for title */
+    font-size: 1.5rem; /* Larger font size for title */
+}
+
+.blog-date {
+    color: #fff; /* White color for date */
+    font-size: 0.9rem; /* Smaller font size for date */
+    margin-bottom: 10px; /* Space below the date */
+}
+
+.blog-text {
+    color: #ccc; /* Light gray color for blog text */
+    margin-bottom: 15px; /* Space below the text */
+}
+
+/* Button styling */
+.btn-success {
+    background-color: #34c759; /* Button color */
+    border-color: #34c759; /* Button border color */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.btn-success:hover {
+    background-color: #28a745; /* Darker green on hover */
+    border-color: #28a745; /* Darker border on hover */
+}
+.socials {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    gap: 10px; /* Add some space between the icons */
+}
+
+.rounded-icons {
+    border: 1px solid #34c759; /* Highlight line color */
+    border-radius: 50%; /* Make it rounded */
+    width: 40px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+    display: flex;
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+}
+
+.social-icon {
+    color: #34c759; /* Icon color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 20px; /* Adjust icon size */
+}
+.social-icon {
+    color: #34c759; /* Icon color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 20px; /* Adjust icon size */
+    transition: color 0.3s; /* Smooth transition for the color change */
+}
+
+.social-icon:hover {
+    color: #00ff00; /* Change color to green on hover */
+    text-shadow: 0 0 5px #00ff00; /* Optional: add a glow effect */
+}
+.form-control {
+    background-color: #2c2c2c; /* Dark gray background */
+    color: #34c759; /* Change text color to green */
+    border: 1px solid #34c759; /* Green border */
+}
+
+.form-control::placeholder {
+    color: #b3b3b3; /* Light gray placeholder text */
+}
+
+.form-control:focus {
+    background-color: #3a3a3a; /* Slightly lighter gray on focus */
+    border-color: #34c759; /* Keep the green border on focus */
+    box-shadow: 0 0 5px rgba(52, 199, 89, 0.5); /* Optional shadow effect */
+}
+#footer {
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    padding: 20px 0; /* Padding for top and bottom */
+    text-align: center; /* Center align text */
+    position: relative; /* Positioning */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+}
+
+.footer-content {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the content */
+}
+
+.footer-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer-links li {
+    display: inline; /* Inline list items */
+    margin: 0 10px; /* Spacing between links */
+}
+
+.footer-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
